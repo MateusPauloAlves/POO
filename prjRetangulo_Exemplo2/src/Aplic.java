@@ -7,9 +7,8 @@ import java.util.Scanner;
  */
 public class Aplic {
     public static void main(String[] args) {
-        Retangulo objRet = new Retangulo();
-        //definição da classe retangulo
-                Scanner entrada = new Scanner(System.in);
+        Retangulo objRet = new Retangulo();     //definição da classe retangulo
+        Scanner entrada = new Scanner(System.in);
         double medAlt, medBase;
         int opcao;
         
@@ -24,18 +23,29 @@ public class Aplic {
         do{
             System.out.println("\n\n1-Consultar área do retângulo");
             System.out.println("2-Consultar perimetro do retângulo");
-            System.out.println("3-Sair");
+            System.out.println("3-Consultar diagonal do retângulo");
+            System.out.println("4-Sair");
             System.out.println("Digite a opção: ");
             opcao = entrada.nextInt();
             if (opcao == 1){
+                System.out.println("Medida da altura do retângulo: " + objRet.getAltura());
+                System.out.println("Medida da base do retângulo: " + objRet.getBase());
                 System.out.println("mostrar área do retangulo: " + 
                                     objRet.calcArea());
             }else
                 if(opcao == 2){
+                    System.out.println("Medida da altura do retângulo: " + objRet.getAltura());
+                    System.out.println("Medida da base do retângulo: " + objRet.getBase());
                     System.out.println("mostrar perimetro do retangulo: " + 
                                     objRet.calcPerimetro());
-                }
-        }while (opcao < 3);
+                }else
+                    if(opcao == 3){
+                        System.out.println("Medida da altura do retângulo: " + objRet.getAltura());
+                        System.out.println("Medida da base do retângulo: " + objRet.getBase());
+                        System.out.println("mostrar diagonal do retangulo: " + 
+                                    objRet.calcDiagonal());
+                    }
+        }while (opcao < 4);
     }
     
 }

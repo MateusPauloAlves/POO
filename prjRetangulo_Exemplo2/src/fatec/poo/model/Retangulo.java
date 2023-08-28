@@ -9,15 +9,24 @@ public class Retangulo {
 
             
     public void setAltura(double a){
-    altura = a;
+        altura = a;
+    }
+    public double getAltura(){
+        return (altura);
     }
     public void setBase(double b){
     base = b;
     }
+    public double getBase(){
+        return (base);
+    }
     public double calcArea(){
-    return(base * altura);
+        return(base * altura);
     }
     public double calcPerimetro(){
-    return(2*(base+altura));
-    }            
+        return(2*(base+altura));
+    }
+    public double calcDiagonal(){
+        return (Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2)));
+    }
 }
