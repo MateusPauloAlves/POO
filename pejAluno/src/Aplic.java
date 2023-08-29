@@ -42,6 +42,12 @@ public class Aplic {
             System.out.println("4-Sair");
             System.out.println("Digite a opção: ");
             opcao = entrada.nextInt();
+            
+            if(opcao == 4){
+                break;
+            }
+            
+            System.out.println("\nAluno: " + objAlu.getRA());
             if (opcao == 1){
                 System.out.println("As notas das primeira e segunda provas: " + objAlu.getNtPrv1() + ", " + objAlu.getNtPrv2());
                 System.out.println("As notas dos primeiro e segundo trabalhos: " + objAlu.getNtTrab1() + ", " + objAlu.getNtTrab2());
@@ -52,8 +58,13 @@ public class Aplic {
                 }else
                     if(opcao == 3){
                         System.out.println("Média Final: " + objAlu.calcMediaFinal());
+                        if(objAlu.calcMediaFinal() >= 6){
+                            System.out.println("Situação: Aprovado");
+                        }else{
+                            System.out.println("Situação: Reprovado");
+                        }
                     }
-        }while (opcao < 4);
+        }while (true);
     }
     
 }

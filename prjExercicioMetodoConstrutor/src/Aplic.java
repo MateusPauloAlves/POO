@@ -8,10 +8,14 @@ import java.util.Scanner;
  */
 public class Aplic {
     public static void main(String[] args) {
-        Circulo objCir = new Circulo();     //definição da classe retangulo
         Scanner entrada = new Scanner(System.in);
         double medRaio;
         int opcao;
+        String unidade;
+        
+        System.out.print("Digite a unidade de medida: ");
+        unidade = entrada.next();
+        Circulo objCir = new Circulo(unidade);  //Criando construtor
         
         System.out.println("Digite o raio do círculo: ");
         medRaio = entrada.nextDouble();    
@@ -28,17 +32,17 @@ public class Aplic {
             if (opcao == 1){
                 System.out.println("Medida do raio do círculo: " + objCir.getRaio());
                 System.out.println("mostrar área do círculo: " + 
-                                    objCir.calcArea());
+                                    objCir.calcArea() + " " + objCir.getUnidadeMedida() + "²");
             }else
                 if(opcao == 2){
                     System.out.println("Medida do raio do círculo: " + objCir.getRaio());
                     System.out.println("mostrar perimetro do circulo: " + 
-                                    objCir.calcPerimetro());
+                                    objCir.calcPerimetro() + " " + objCir.getUnidadeMedida());
                 }else
                     if(opcao == 3){
                         System.out.println("Medida do raio do círculo: " + objCir.getRaio());
                         System.out.println("mostrar diametro do círculo: " + 
-                                    objCir.calcDiametro());
+                                    objCir.calcDiametro() + " " + objCir.getUnidadeMedida());
                     }
         }while (opcao < 4);
     }
