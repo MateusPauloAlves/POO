@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Aplic {
     public static void main(String[] args) {
-       DecimalFormat df = new DecimalFormat("0.0");
+       DecimalFormat df = new DecimalFormat("0.00");
        Scanner entrada = new Scanner(System.in);       
        String unidade;
        double medRaio;       
@@ -17,7 +17,7 @@ public class Aplic {
 
        
        //definição de uma matriz de objetos 
-       //para classe Retangulo
+       //para classe Circulo
        Circulo[] matCir = new Circulo[10];
        
        
@@ -41,10 +41,10 @@ public class Aplic {
         //acessando matriz de objetos
         for (i=0; i < 10; i++){                         //passagem de mensagens
             System.out.println("\n\nObjeto Circulo " + (i+1)); 
-	    System.out.println("\nMedida do raio: " + matCir[i].getRaio());	
-            System.out.println("Área: " + matCir[i].calcArea() + " " + matCir[i].getUnidadeMedida() + "²"); 
-            System.out.println("Perímetro: " + matCir[i].calcPerimetro() + " " + matCir[i].getUnidadeMedida());
-            System.out.println("Diametro: " + matCir[i].calcDiametro() + " " + matCir[i].getUnidadeMedida());
+	    System.out.println("\nMedida do raio: " + df.format(matCir[i].getRaio()));
+            System.out.println("Área: " + df.format(matCir[i].calcArea()) + " " + matCir[i].getUnidadeMedida() + "²"); 
+            System.out.println("Perímetro: " + df.format(matCir[i].calcPerimetro()) + " " + matCir[i].getUnidadeMedida());
+            System.out.println("Diametro: " + df.format(matCir[i].calcDiametro()) + " " + matCir[i].getUnidadeMedida());
         }   		   
     }    
 }
