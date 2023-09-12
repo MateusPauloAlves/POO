@@ -34,5 +34,8 @@ public class Cliente extends Pessoa{
         this.altura = altura;
     }
     
+    public double calcIMC() {
+        return (peso/(altura*altura));
+    }
     
 }

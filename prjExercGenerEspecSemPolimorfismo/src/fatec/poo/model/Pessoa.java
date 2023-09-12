@@ -7,6 +7,7 @@ package fatec.poo.model;
 public class Pessoa {
     private String nome;
     private String telefone;
+    private String email;
 
     public Pessoa(String nome, String telefone) {
         this.nome = nome;
@@ -20,4 +21,13 @@ public class Pessoa {
     public String getTelefone() {
         return telefone;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    
 }
