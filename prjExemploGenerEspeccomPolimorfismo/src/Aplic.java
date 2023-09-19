@@ -1,4 +1,5 @@
 
+import fatec.poo.model.FuncionarioComissionado;
 import fatec.poo.model.FuncionarioHorista;
 import fatec.poo.model.FuncionarioMensalista;
 import java.text.DecimalFormat;
@@ -33,6 +34,25 @@ public class Aplic {
         System.out.println("Salario Bruto       => " + df.format(funcMen.calcSalBruto()));
         System.out.println("Desconto            => " + df.format(funcMen.calcDesconto()));
         System.out.println("Salario Liquido     => " + df.format(funcMen.calcSalLiquido()));
+        
+        
+        FuncionarioComissionado funcCom = new FuncionarioComissionado(3030, "Marcão", "06/01/2000", 5);
+        
+        funcCom.setSalBase(1200);
+        funcCom.setCargo("Madereiro");
+        funcCom.addVendas(8000);
+        funcCom.addVendas(1500);
+        funcCom.addVendas(500);
+
+        System.out.println("\n\nFuncionario: " + funcCom.getRegistro() + "|| Nome: " + funcCom.getNome() + 
+                "|| Data de Admissão: " + funcCom.getDtAdmissao() + "|| Cargo: " + funcCom.getCargo());
+        System.out.println("Total Vendas        => " + funcCom.getTotalVendas());
+        System.out.println("Taxa Comissão       => " + funcCom.getTaxaComissao() + "%");
+        System.out.println("Total Vendas        => " + funcCom.getTotalVendas());
+        System.out.println("Salario Bruto       => " + df.format(funcCom.calcSalBruto()));
+        System.out.println("Gratificacao        => " + df.format(funcCom.calcGratificacao()));
+        System.out.println("Desconto            => " + df.format(funcCom.calcDesconto()));
+        System.out.println("Salario Liquido     => " + df.format(funcCom.calcSalLiquido()));
     }
     
 }
