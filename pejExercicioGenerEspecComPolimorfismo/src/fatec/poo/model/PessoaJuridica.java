@@ -1,14 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fatec.poo.model;
 
 /**
  *
  * @author 0030482211023
  */
-public class PessoaJuridica {
+public class PessoaJuridica extends Pessoa{
+    private String CGC;
+    private double TaxaIncentivo;
+
+    public PessoaJuridica(String CGC, String Nome, int AnoInscricao) {
+        super(Nome, AnoInscricao);
+        this.CGC = CGC;
+    }
     
+    public double calcBonus(int valorAnoAtual){
+        return (this.TaxaIncentivo/100 * super.getTotalCompras()) * (valorAnoAtual - super.getAnoInscricao());
+    }
+
+    public void setTaxaIncentivo(double TaxaIncentivo) {
+        this.TaxaIncentivo = TaxaIncentivo;
+    }
+
+    public String getCGC() {
+        return CGC;
+    }
+
+    public double getTaxaIncentivo() {
+        return TaxaIncentivo;
+    }
 }

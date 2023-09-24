@@ -13,8 +13,11 @@ public class PessoaFisica extends Pessoa{
         this.CPF = CPF;
     }
    
-   public double calcBonus(int a){
-       return;
+   public double calcBonus(int valorAnoAtual){
+       if(super.getTotalCompras() > 12000){
+           return (valorAnoAtual - super.getAnoInscricao()) * Base;
+       }
+       return 0;
    }
 
     public String getCPF() {
