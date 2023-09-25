@@ -1,4 +1,5 @@
 import fatec.poo.model.Departamento;
+import fatec.poo.model.Funcionario;
 import fatec.poo.model.FuncionarioComissionado;
 import fatec.poo.model.FuncionarioHorista;
 import fatec.poo.model.FuncionarioMensalista;
@@ -27,6 +28,7 @@ public class Aplic {
                                                                      "Joao Mendes",
                                                                      "10/12/1975",
                                                                      10);
+        
         funcCom.setCargo("Vendedor");
        
         //Instanciação de objetos da 
@@ -38,25 +40,34 @@ public class Aplic {
        //Estabelecendo a associação binária entre 1
        //objeto da classe FuncionarioHorista com
        //1 objeto da classe Departamento
-       
-              
+       funcHor.setDepartamento(objDep1);
+       System.out.println("O funcionario " + funcHor.getNome() 
+       + " trabalha no departamneto " + funcHor.getDepartamento().getNome());
        
        //Estabelecendo a associação binária entre 1
        //objeto da classe FuncionarioMensalista com
        //1 objeto da classe Departamento
+       funcMen.setDepartamento(objDep1);
+       System.out.println("O funcionario " + funcMen.getNome() 
+       + " trabalha no departamneto " + funcMen.getDepartamento().getNome());
        
-      
        //Estabelecendo a associação binária entre 1
        //objeto da classe FuncionarioComissionado com
        //1 objeto da classe Departamento       
-       
+       funcCom.setDepartamento(objDep2);
+       System.out.println("O funcionario " + funcCom.getNome() 
+       + " trabalha no departamneto " + funcCom.getDepartamento().getNome());
       
        //Estabelecendo a associação binária entre um
        //objeto da classe Departamento com 1 ou mais (1..*)
        //objetos da classe FuncionarioHorista, FuncionarioMensalista
        //e FuncionarioComissionado  
+       Funcionario[] funcionarios = new Funcionario[3];
        
+       funcionarios[0] = funcHor;
+       funcionarios[1] = funcMen;
+       funcionarios[2] = funcCom;
        
-       
+       objDep1.setFuncionarios(funcionarios);
     }    
 }

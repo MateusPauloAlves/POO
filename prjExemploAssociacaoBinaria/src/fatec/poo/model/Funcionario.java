@@ -9,6 +9,8 @@ public abstract class Funcionario {
     private String nome;
     private String dtAdmissao;
     private String cargo;
+    
+    private Departamento departamento; //multiciplicada
         
     public Funcionario(int registro, String nome, String dtAdmissao) {
         this.registro = registro;
@@ -46,4 +48,14 @@ public abstract class Funcionario {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+    
+    
 }

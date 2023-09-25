@@ -8,6 +8,7 @@ package fatec.poo.model;
 public class Departamento {
     private String sigla;
     private String nome;
+    private Funcionario[] funcionarios;
 
     public Departamento(String sigla, String nome) {
         this.sigla = sigla;
@@ -20,5 +21,13 @@ public class Departamento {
 
     public String getNome() {
         return nome;
+    }
+    
+    public void addFuncionarios( Funcionario[] funcionarios){
+        this.funcionarios = funcionarios;
+    }
+    
+    public void listarFuncionarios(){
+        
     }
 }
