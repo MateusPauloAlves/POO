@@ -27,6 +27,6 @@ public class FuncionarioHorista extends Funcionario{
     }
     
     public double calcSalLiquido() {
-        return (calcSalBruto() + calcGratificacao() - calcDesconto());
+        return (super.calcSalLiquido() + calcGratificacao());
     }
 }
