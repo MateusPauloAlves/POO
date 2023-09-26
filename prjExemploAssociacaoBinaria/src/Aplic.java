@@ -62,12 +62,11 @@ public class Aplic {
        //objeto da classe Departamento com 1 ou mais (1..*)
        //objetos da classe FuncionarioHorista, FuncionarioMensalista
        //e FuncionarioComissionado  
-       Funcionario[] funcionarios = new Funcionario[3];
+       objDep1.addFuncionario(funcHor);
+       objDep1.addFuncionario(funcMen);
+       objDep2.addFuncionario(funcCom);
        
-       funcionarios[0] = funcHor;
-       funcionarios[1] = funcMen;
-       funcionarios[2] = funcCom;
-       
-       objDep1.setFuncionarios(funcionarios);
+       objDep1.listarFuncionarios();
+       objDep2.listarFuncionarios();
     }    
 }
