@@ -10,7 +10,9 @@ public abstract class Funcionario {
     private String dtAdmissao;
     private String cargo;
     
-    private Departamento departamento; //multiciplicada
+    private Departamento departamento; //multiplicidade
+    
+    private Projeto projeto; // multiplicidade
         
     public Funcionario(int registro, String nome, String dtAdmissao) {
         this.registro = registro;
@@ -56,6 +58,14 @@ public abstract class Funcionario {
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
-    
+
+    public void setProjeto(Projeto projeto) {
+        this.projeto = projeto;
+    }
+
+    public Projeto getProjeto() {
+        return projeto;
+    }
+
     
 }

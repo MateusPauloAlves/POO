@@ -8,6 +8,7 @@ package fatec.poo.model;
 public class Departamento {
     private String sigla;
     private String nome;
+    
     private Funcionario[] funcionarios; //multiplicidade 1..*
     private int numFunc;
 
@@ -32,7 +33,6 @@ public class Departamento {
     public void listarFuncionarios(){
         System.out.println("\n\nSigla: " + sigla);
         System.out.println("Nome: " + nome);
-        System.out.println("Qtde. Funcionários: " + numFunc);
         System.out.println("Qtde. Funcionários: " + numFunc);
         System.out.println("\nRegistro:\tNome:\t\tCargo:");
         for(int i=0; i < numFunc; i++){
