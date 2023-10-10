@@ -10,14 +10,14 @@ public class Projeto {
     private String dtInicio;
     private String dtTermino;
     
-    private Funcionario[] funcionario; //multiplicidade 1..*
+    private Funcionario[] funcionarios; //multiplicidade 1..*
     private int numFunc;
 
     public Projeto(int codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
         
-        funcionario = new Funcionario[3];
+        funcionarios = new Funcionario[3];
     }
 
     public void setDtInicio(String dtInicio) {
@@ -45,7 +45,7 @@ public class Projeto {
     }
     
     public void addFuncionario(Funcionario funcionario){
-        this.funcionario[numFunc++] = funcionario;
+        this.funcionarios[numFunc++] = funcionario;
     }
     
     public void listarFuncionarios(){
@@ -56,8 +56,8 @@ public class Projeto {
         System.out.println("Qtde. Funcionários: " + numFunc);
         System.out.println("\nRegistro:\tNome:\t\tCargo:\t\tDepartamento:");
         for(int i=0; i < numFunc; i++){
-            System.out.println(funcionario[i].getRegistro() + "\t\t" + funcionario[i].getNome() 
-                    + "\t" + funcionario[i].getCargo() + "\t" + funcionario[i].getDepartamento().getNome());
+            System.out.println(funcionarios[i].getRegistro() + "\t\t" + funcionarios[i].getNome() 
+                    + "\t" + funcionarios[i].getCargo() + "\t" + funcionarios[i].getDepartamento().getNome());
         }
     }
 }
