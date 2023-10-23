@@ -28,66 +28,61 @@ public class Aplic {
                                                                      "Joao Mendes",
                                                                      "10/12/1975",
                                                                      10);
-        
         funcCom.setCargo("Vendedor");
        
         //Instanciação de objetos da 
         //classe Departamento    
         Departamento objDep1 = new Departamento("RH", "Recursos Humanos");
         Departamento objDep2 = new Departamento("VD", "Vendas");
-        
-        // classe Projeto
-        Projeto objPro1 = new Projeto(1111, "Criação de um WebService");
-        Projeto objPro2 = new Projeto(2222, "Aplicativo para compras");
-        objPro1.setDtInicio("24/05/2020");
-        objPro1.setDtTermino("27/08/2021");
-        objPro2.setDtInicio("30/01/2019");
-        objPro2.setDtTermino("10/10/2023");
       
-	  
+	//instanciação de  um objeto da 
+        //classe Projeto
+        Projeto objPrj = new Projeto(1234, "Segurança no Trabalho");
+        objPrj.setDtInicio("02/11/2023");
+        objPrj.setDtTermino("25/11/2023"); 
+        
+        objDep1.addFuncionario(funcHor);
+       objDep1.addFuncionario(funcMen);
+       objDep2.addFuncionario(funcCom);
+       
+       objPrj.addFuncionario(funcHor);
+        objPrj.addFuncionario(funcMen);
+        objPrj.addFuncionario(funcCom);
+       
        //Estabelecendo a associação binária entre 1
        //objeto da classe FuncionarioHorista com
        //1 objeto da classe Departamento
-       funcHor.setDepartamento(objDep1);
-       funcHor.setProjeto(objPro1);
-       System.out.println("O funcionario " + funcHor.getNome() 
-       + " trabalha no departamneto " + funcHor.getDepartamento().getNome() + " no projeto "
-       + funcHor.getProjeto().getCodigo());
+       System.out.println("O funcionário horista " + funcHor.getNome() +
+                          " trabalha no deparamento " + funcHor.getDepartamento().getNome());
+       
        
        //Estabelecendo a associação binária entre 1
        //objeto da classe FuncionarioMensalista com
        //1 objeto da classe Departamento
-       funcMen.setDepartamento(objDep1);
-       funcMen.setProjeto(objPro1);
-       System.out.println("O funcionario " + funcMen.getNome() 
-       + " trabalha no departamneto " + funcMen.getDepartamento().getNome() + " no projeto "
-       + funcMen.getProjeto().getCodigo());
+       System.out.println("O funcionário mensalista " + funcMen.getNome() +
+                           " trabalha no departamento " + funcMen.getDepartamento().getNome());
        
+      
        //Estabelecendo a associação binária entre 1
        //objeto da classe FuncionarioComissionado com
-       //1 objeto da classe Departamento       
-       funcCom.setDepartamento(objDep2);
-       funcCom.setProjeto(objPro2);
-       System.out.println("O funcionario " + funcCom.getNome() 
-       + " trabalha no departamneto " + funcCom.getDepartamento().getNome() + " no projeto "
-       + funcCom.getProjeto().getCodigo());
+       //1 objeto da classe Departamento
+       System.out.println("O funcionário comissionado " + funcCom.getNome() +
+                           " trabalha no departamento " +  funcCom.getDepartamento().getNome());
       
        //Estabelecendo a associação binária entre um
        //objeto da classe Departamento com 1 ou mais (1..*)
        //objetos da classe FuncionarioHorista, FuncionarioMensalista
        //e FuncionarioComissionado  
-       objDep1.addFuncionario(funcHor);
-       objDep1.addFuncionario(funcMen);
-       objDep2.addFuncionario(funcCom);
        
        objDep1.listarFuncionarios();
        objDep2.listarFuncionarios();
        
-       objPro1.addFuncionario(funcHor);
-       objPro1.addFuncionario(funcMen);
-       objPro2.addFuncionario(funcCom);
-       
-       objPro1.listarFuncionarios();
-       objPro2.listarFuncionarios();
+        //estabelecendo a associação binária
+        //entre 1 objeto da classe Projeto
+        //com 1 ou mais objetos da classe Funcionario 
+        //(Horista, Mensalista, Comissionado)
+        
+
+        objPrj.listarFuncionarios();
     }    
 }
