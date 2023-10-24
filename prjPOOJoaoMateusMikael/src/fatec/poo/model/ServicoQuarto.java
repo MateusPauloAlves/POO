@@ -10,8 +10,6 @@ public class ServicoQuarto {
     private String descricao;
     private double valor;
     
-    //atributo de multiplicidade 1 para 1
-    private Registro registro;
 
     public ServicoQuarto(int codigo, String descricao) {
         this.codigo = codigo;
@@ -34,9 +32,4 @@ public class ServicoQuarto {
         return valor;
     }
     
- 
-    //método set de Registro
-    public void setRegistro(Registro r) {
-        this.registro = r;
-    }
 }

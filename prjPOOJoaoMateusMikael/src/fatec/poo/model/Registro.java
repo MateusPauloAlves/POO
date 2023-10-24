@@ -76,7 +76,6 @@ public class Registro {
     //métodos adicionais para multiplicidade
     public void addServicoQuarto(ServicoQuarto Q) {
         servicoQuarto.add(Q);
-        Q.setRegistro(this);
     }
     
 }

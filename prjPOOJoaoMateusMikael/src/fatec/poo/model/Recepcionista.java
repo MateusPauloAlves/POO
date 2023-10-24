@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author DESKTOP
+ * @author joao
  */
 public class Recepcionista extends Pessoa {
     private int regFunc;
@@ -26,7 +26,7 @@ public class Recepcionista extends Pessoa {
 
     public void setTurno(String turno) {
         if((turno == "M") || (turno == "T") || (turno == "N"))
-        this.turno = turno ;
+            this.turno = turno ;
     }
 
     public int getRegFunc() {
