@@ -157,7 +157,7 @@ public class GuiDepartamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        conexao = new Conexao("","");//usuario e senha
+        conexao = new Conexao("BD2211023","BD2211023");//usuario e senha
         conexao.setDriver("oracle.jdbc.driver.OracleDriver");
         conexao.setConnectionString("jdbc:oracle:thin:@192.168.1.6:1521:xe");
         daoDepartamento = new DaoDepartamento(conexao.conectar());

@@ -1,7 +1,9 @@
 package fatec.poo.view;
 
 import fatec.poo.control.Conexao;
+import fatec.poo.control.DaoProjeto;
 import fatec.poo.model.Projeto;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -34,6 +36,11 @@ public class GuiProjeto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro Projeto");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setText("Código");
 
@@ -43,16 +50,14 @@ public class GuiProjeto extends javax.swing.JFrame {
 
         jLabel4.setText("Data Término");
 
-        txtDescricao.setEnabled(false);
-
-        txtDataInicio.setEnabled(false);
-
-        txtDataTermino.setEnabled(false);
-
         btnConsultar.setText("Consultar");
 
         btnInserir.setText("Inserir");
-        btnInserir.setEnabled(false);
+        btnInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInserirActionPerformed(evt);
+            }
+        });
 
         btnAlterar.setText("Alterar");
         btnAlterar.setEnabled(false);
@@ -132,6 +137,25 @@ public class GuiProjeto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    conexao = new Conexao("BD2211023","BD2211023");//usuario e senha
+    conexao.setDriver("oracle.jdbc.driver.OracleDriver");
+    conexao.setConnectionString("jdbc:oracle:thin:@192.168.1.6:1521:xe");
+    daoProjeto = new DaoProjeto(conexao.conectar());
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
+        projeto = new Projeto(Integer.parseInt(txtCodigo.getText()), txtDescricao.getText());
+        projeto.setDtInicio(txtDataInicio.getText());
+        projeto.setDtTermino(txtDataTermino.getText());
+        daoProjeto.inserir(projeto);
+        
+        txtCodigo.setText("");
+        txtDescricao.setText("");
+        txtDataInicio.setText("");
+        txtDataTermino.setText("");
+    }//GEN-LAST:event_btnInserirActionPerformed
        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;
@@ -148,5 +172,7 @@ public class GuiProjeto extends javax.swing.JFrame {
     private javax.swing.JTextField txtDataTermino;
     private javax.swing.JTextField txtDescricao;
     // End of variables declaration//GEN-END:variables
-    
+    private DaoProjeto daoProjeto = null;
+    private Projeto projeto = null;
+    private Conexao conexao = null;
 }
