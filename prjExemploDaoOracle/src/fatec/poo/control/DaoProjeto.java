@@ -20,7 +20,7 @@ public class DaoProjeto {
     public void inserir(Projeto projeto) {
         PreparedStatement ps = null;
         try {
-            ps = conn.prepareStatement("INSERT INTO tbprojeto(codigo, descricao, dtInicio, dtTermino) values (?, ?, ?, ?)");
+            ps = conn.prepareStatement("INSERT INTO tbprojeto(codigo, descricao, dtInicio, dtTermino) VALUES (?, ?, ?, ?)");
             ps.setInt(1, projeto.getCodigo());
             ps.setString(2, projeto.getDescricao());
             ps.setString(3, projeto.getDtInicio());

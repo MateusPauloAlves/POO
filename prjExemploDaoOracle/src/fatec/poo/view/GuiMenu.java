@@ -16,6 +16,7 @@ public class GuiMenu extends javax.swing.JFrame {
         jMenuBar = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
         jMenuItemDepartamento = new javax.swing.JMenuItem();
+        ItemMenuProjeto = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Empresa");
@@ -29,6 +30,14 @@ public class GuiMenu extends javax.swing.JFrame {
             }
         });
         jMenuCadastro.add(jMenuItemDepartamento);
+
+        ItemMenuProjeto.setText("Projeto");
+        ItemMenuProjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemMenuProjetoActionPerformed(evt);
+            }
+        });
+        jMenuCadastro.add(ItemMenuProjeto);
 
         jMenuBar.add(jMenuCadastro);
 
@@ -51,6 +60,10 @@ public class GuiMenu extends javax.swing.JFrame {
     private void jMenuItemDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDepartamentoActionPerformed
         new GuiDepartamento().setVisible(true);
     }//GEN-LAST:event_jMenuItemDepartamentoActionPerformed
+
+    private void ItemMenuProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemMenuProjetoActionPerformed
+        new GuiProjeto().setVisible(true);
+    }//GEN-LAST:event_ItemMenuProjetoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,6 +101,7 @@ public class GuiMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ItemMenuProjeto;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenuItem jMenuItemDepartamento;
